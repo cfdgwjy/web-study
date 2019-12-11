@@ -1,0 +1,32 @@
+1.正则表达式是什么？
+正则表达式就是搜索匹配某个句法的字符串搜索模式。 又称为regex。RE。
+2.正则表达式的作用是什么？
+正则表达式可以用于搜索和替换。
+3.JavaScript Regexp对象
+语法：
+var patt=new Regexp(pattern,modifiers);   和var patt=/pattern/modifiers;是一样的
+pattern(模式描述了表达式的模式)
+modifiers(修饰符，用于指定全局匹配，大小写匹配，多行匹配等)
+4.如何使用正则表达SHI
+（1）
+/正则表达式/修饰符
+在JAVASCRIPT中，常用的搜索方法有search和replace.
+使用RegExp对象预定了属性和方法的对象。
+（2)使用test
+test() 是一个正则表达式方法。它可以用来检测一个字符串中含有匹配的文本，则返回true，否则返回false。
+var patt = /e/;
+patt.test("The best things in life are free!");
+
+(3)使用exec()
+exec()方法是一个正则表达式方法。exec()方法用于检索字符串中正则表达式的匹配。该函数返回一个数组，用于匹存放配的结果，如果未找到匹配，则返回null.
+/e/i.exec("wd3r5545e")
+例子:
+(1) replace()方法使用正则表达式
+var str="abc";
+var text=str.replace(/b/,e)
+(2)效验是否全由8个字符构成
+function isStudent(str){
+var reg=/^[0-9]{8}$/;   //定义验证表达式进行验证
+return reg.test(str)
+}
+^:

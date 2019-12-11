@@ -29,4 +29,15 @@ function isStudent(str){
 var reg=/^[0-9]{8}$/;   //定义验证表达式进行验证
 return reg.test(str)
 }
-^:
+^a:匹配任何开头为a的字符串  ^[0-9]
+a$:匹配任何结尾为a的字符串。 $
+n{x}:匹配包含X个n的字符串 n{8}
+
+(3) 匹配是否为小数
+function isDemical(str)
+{
+var reg=/^[0-9]+/
+}
+
+
++：匹配前面的子表达式一次或多次（大于等于1次）

@@ -1,1 +1,9 @@
-
+                                                对象的扩展
+属性的简洁表示：方法的简洁表示： 例子：
+let b='2019'
+var obj={
+  name:"xiaoxiao1";
+  birth:birth;
+  hello:(){
+  console.log('hello',this.name);
+                                            

@@ -7,3 +7,12 @@ var obj={
   hello:(){
   console.log('hello',this.name);
                                             
+2.属性的遍历
+ES6有五种方法可以遍历对象的属性。
+ for...in    Object.keys()  Object.getOwnPropertyNames(obj) Object.getOwnPropertySymbols(obj) Reflect.keys()
+ 
+3.super关键字
+this关键字指向函数当前所在对象。ES6新增关键字super，指向当前对象的原型对象。例子：
+let proto={foo:'hello'}
+let obj={foo:'world find(){return super.foo}};
+Object.setPrototypeof(obj,proto) obj.find() //hello

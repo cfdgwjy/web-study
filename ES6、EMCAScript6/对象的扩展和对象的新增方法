@@ -16,3 +16,44 @@ this关键字指向函数当前所在对象。ES6新增关键字super，指向�
 let proto={foo:'hello'}
 let obj={foo:'world find(){return super.foo}};
 Object.setPrototypeof(obj,proto) obj.find() //hello
+
+4.对象的解构赋值
+
+对象的解构赋值从一个对象取值，相当于将目标对象的可遍历属性，分配到指定的对象上。所有的键和值都会拷贝到新对象上。
+例子： let {x,y,z}={x:1,y:2,z:3}
+
+扩展运算符
+对象的扩展运算符（...）用于取出参数对象的可遍历属性。拷贝到当前对象之中。
+let n={a:1,b:2}
+let z={...n}   //{a:1,b:2}
+
+                                        对象的新增方法
+1.Object.is()
+ES6有两种判断相等的运算符，相等(==)和严格相等(===)。  相等缺点：转化数据类型   严格相等缺点：NaN不等于自身。
+JAVASCRIPT缺乏一种运算。只要两个值一样，就应该相等。
+ES6提出同值相等算法。Object.is()就是这个算法。
+例子：Object.is('f','f')   //true
+
+2.Object.asgin()
+Object.assign方法用于对象的合并。将源对象(source)得到所有可枚举属性，复制到目标(target)上。
+例子：
+let target={};    let source1={a:1} let source2={b:3}
+Object.assign(target,source1,source2)      target:{a:1,b:2}
+Object.assign()方法第一个是目标对象，后面参数都是源对象。
+
+特点： (1)浅拷贝 Objet.assign()是浅拷贝。如果源对象某个属性是对象，那么目标对象的只是对该对象的引用。
+（2）同名属性替换
+（3）数组会被当成对象
+（4）Object.assign()只能进行值的复制，如果复制一个取值函数，那么先取值，再复制。
+
+用途：（1）为对象添加属性
+（2）为对象添加方法
+（3）克隆对象
+（4）合并多个对象
+（5）为对象指定默认值
+5.Object.keys() Object.values Object.entries
+
+Object.keys() 返回一个数组，成员是对象自身的(可遍历)的属性的键名。
+Object.values  返回一个数组，成员是对象自身的(可遍历)的属性的键值。
+Object.entries 方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+Object.fromEntries()  是Object.entries 的逆操作，把键值对数组转成对象

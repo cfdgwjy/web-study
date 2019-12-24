@@ -39,5 +39,22 @@
    WeakSet.prototype.delete()   删除WeakSet的某个指定成员
    WeakSet.prototype.has() 返回一个值，表示某个值是否在WeakSet实例之中。
    
-   
+                                                            MAP
+     javascript的对象(Object),本质上是键值对的集合(hash)结构，但是传统上来说只能用字符串作为键。
+     为了解决这个问题，ES6提供了Map结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当做键。
+     也就是说，Object结构提供了“字符串-值”的对应，Map提供了“值-值”的对应。
+     例子： const m=new Map(); o={p:'hello'}  m.set(o,'content')  m.get(o)  //"content"  m.has(o) //true  m.delete(o) //true
+     
+     作为构造函数，Map也可以接受一个数组作为参数。该数组的成员是一个个表示键值对的数组。
+     const map=new Map(['name':'wang'],['title':'sr']);  map.size() //2     map.has('name') //"wang"     
+     如果对同一个键多次赋值，那么后面的值会覆盖前一个值。
+     
+     实例的属性和操作方法。 Map结构：
+     (1) size属性返回Map结构的成员个数。
+     (2)Map.prototype.set(key,value)  set方法设置键key对应的值value.返回整个Map结构
+     (3) Map.prototype.has(key) delete(key)  clear()清除所有成员，无返回值。
+     遍历方法，Map结构提供三个遍历器和一个遍历方法。
+     
+     
+     
    

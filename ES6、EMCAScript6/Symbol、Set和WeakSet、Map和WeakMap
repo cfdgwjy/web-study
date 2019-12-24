@@ -54,6 +54,14 @@
      (2)Map.prototype.set(key,value)  set方法设置键key对应的值value.返回整个Map结构
      (3) Map.prototype.has(key) delete(key)  clear()清除所有成员，无返回值。
      遍历方法，Map结构提供三个遍历器和一个遍历方法。
+Map.prototype.keys()：返回键名的遍历器。Map.prototype.values()：返回键值的遍历器。Map.prototype.entries()：返回所有成员的遍历器。
+Map.prototype.forEach()：遍历 Map 的所有成员.
+与其他数据结构的互换：
+（1）转为数组  const map=new Map()   [...map]
+（2）数组转为map  传入Map构造函数即可  new Map([ [1,2],[{foo:'2'},['abc']]
+(3) Map转对象  如果map的键名是字符串，那么它可以无损转为对象。
+
+
      
      
      

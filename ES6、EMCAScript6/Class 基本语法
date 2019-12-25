@@ -1,0 +1,9 @@
+类的由来：JavaScript中，生成实例对象的传统方法是通过构造函数。
+例子：
+function Point(x, y) {this.x = x;this.y = y;}
+Point.prototype.toString = function () {
+  return '(' + this.x + ', ' + this.y + ')';
+};
+
+var p = new Point(1, 2);
+ES6提供了接近传统语言的写法，引入了Class类的概念。作为对象的模板，通过class关键字，定义类。例子用class类改写。

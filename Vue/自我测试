@@ -1,0 +1,14 @@
+1.你对vue了解多少？vue是做什么的？vue的优点是什么？
+
+（1）vue是一个基于MVVM模式的响应式前端框架。MVVM模式又是什么？ 
+（3）vue的优点是它有diff算法，当数据改变时，它负责处理数据并改变视图。
+（4）vue还具有vue-router,可以跳转页面。
+（5）与vue相关的ui有element-ui.
+2.vue实例
+什么是VUE实例？ var a=new Vue() 实例化一个对象。其中在data（）数据对象之中定义数据。
+render函数干什么的？
+3.vue相关的指令有哪些？作用是什么？
+v-if v-else v-for v:bind v@ 
+4.vue 的流程是什么？改变一个元素的数据有哪些方法？
+watch method 举例说明一下：  
+5.

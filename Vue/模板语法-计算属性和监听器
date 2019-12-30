@@ -1,0 +1,42 @@
+Vue.js使用了基于HTML的模板语法，允许开发者声明式地将DOM绑定至底层Vue实例的数据。
+也可以选择不用模板，直接写渲染（render）函数，使用JSX语法。
+                                                        插值：
+文本： （1） {{}} 文本插值
+（2）原始html:双大括号 {{}}会将数据解释为普通文本，而非html代码。为了输出真正的html,你需要用到v-html指令。
+<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+#特性
+{{}}语法不能用在Html特性上，遇到这种情况，应该使用v-bind指令：
+<div v-bind:id="spanid">
+对于布尔特性 (它们只要存在就意味着值为 true)
+
+#使用javascript表达式
+对于所有的数据绑定，Vue.js都提供了完全的JavaScript表达式支持。
+{{number+1}}  {{ok? 'yes'：'no'}}
+有个限制，每个绑定只能绑定单个表达式。
+                                                      指令
+指令（directives）是带有v-前缀的特殊特性。指令特性的值预期是单个javascript表达式。
+#参数 一些指令能够接受一些参数，在指令名称之后以冒号表示。例如v-bind指令可以用于响应式地更新html特性。
+<a v-bind:href="url">..</a>
+在这里href是参数，告知v-bind指令与表达式url的值绑定。
+另一个例子，v-on指令，它用于监听DOM事件。
+<a v-on:click="doSomething">...</a>
+缩写 ：  v:bind :bind  v-on @
+
+                                                  计算属性和监听器
+   模板内的表达式适用于简单运算，在模板中放入太多逻辑会让模板过重且难以维护。对于任何复杂逻辑，应当使用计算属性。
+例子：
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed:{
+  reversedmessage:function()
+  { return this.message.split('').reverse().join('')
+  }
+   计算属性缓存 vs 方法  不同点：计算属性基于它们的响应式依赖进行缓存。只有相关响应式依赖

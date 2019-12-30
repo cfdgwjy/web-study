@@ -41,7 +41,17 @@ el:#app3;
 data:{seen:true}
 v-if v-else v-for v:bind v@ 
 
-
+<div id="app-4">
+<ol>
+<li v-for="todo in todos">{{todo.text}}</li>
+</ol>
+</div>
+var app4=new Vue()
+{
+el:#app4;
+data:{
+todos:{text:'学习JS'}，{text:'学习vue'}
+}
 
 2.vue实例
 什么是VUE实例？ var a=new Vue() 实例化一个对象。其中在data（）数据对象之中定义数据。

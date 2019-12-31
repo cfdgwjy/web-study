@@ -23,7 +23,7 @@ Vue.js使用了基于HTML的模板语法，允许开发者声明式地将DOM绑�
 <a v-on:click="doSomething">...</a>
 缩写 ：  v:bind :bind  v-on @
 
-                                                  计算属性和监听器
+                                                  计算属性和侦听器
    模板内的表达式适用于简单运算，在模板中放入太多逻辑会让模板过重且难以维护。对于任何复杂逻辑，应当使用计算属性。
 例子：
 <div id="example">
@@ -39,4 +39,21 @@ var vm = new Vue({
   reversedmessage:function()
   { return this.message.split('').reverse().join('')
   }
-   计算属性缓存 vs 方法  不同点：计算属性基于它们的响应式依赖进行缓存。只有相关响应式依赖
+   计算属性缓存 vs 方法  不同点：计算属性基于它们的响应式依赖进行缓存。只有相关响应式依赖.
+   计算属性 vs 侦听属性（观察和响应vue数据变动）
+   侦听器：
+   
+   vue通过watch选项提供了一个通用的方法，来相应数据变化。当数据变化时执行异步或开销较大时有用。
+   例子：
+   watch:{
+  question:function(new,old)
+  {
+  this.answer='13455'
+  }
+}
+                                               class与style绑定  v-bind绑定
+                                               条件渲染
+     v-if v-else v-show  v-for
+                                              事件处理
+    使用v-on监听dom事件。事件修饰符号       .stop .prevent
+      

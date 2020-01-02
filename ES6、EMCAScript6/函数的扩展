@@ -1,0 +1,23 @@
+                                                  函数的扩展
+     函数参数默认值
+函数参数默认值ES6写法：
+    function log(x, y = 'World') {
+  console.log(x, y);
+}
+log('Hello') // Hello World     log('Hello', 'China') // Hello China  
+与结构赋值默认值结合使用
+function log({x,y='2'}={}){    console.log(x, y); }    foo()  //undefined,2
+相关知识点：参数默认值的位置    函数的legth属性  作用域  
+2. rest参数
+ES6引入rest参数（形式为...参数名），用于获取函数的多余参数，这样就不需要使用arguments对象。rest参数搭配的变量是一个数组，该变量将多余的参数放入到数组之中。
+例子：例子1：
+function add(...values)
+{ let num=0;
+  for(i of values)
+  { num=num+i;}
+  return num;}
+  add(...[1,2,3])   //6   
+  例子2： const sortNumbers=(...numbers)=>numbers.sort;
+4.name属性
+5.箭头函数
+ES6允许使用箭头定义函数。

@@ -43,3 +43,32 @@ let getItem=id=>({id:id})
  箭头函数内部，还可以再使用箭头函数。下面是一个ES5语法的多重嵌套函数。
  function insert(value){
  return {into:function(array)
+ 
+      尾调用优化
+      尾调用（Trail Call）是函数式编程的一个重要概念，本身简单，指函数的最后一步调用某个函数。
+      例子： function f(x){ g(x)} 函数f的最后一步就是调用函数g,这就是尾调用。
+      尾递归
+      函数调用自身，称为递归，如果尾调用自身，就称为尾递归。递归非常耗内存，因为需要保存成百上千个调用帧，很容易发生栈溢出错误。
+      例子：
+      function factorial(n)
+      {
+      if(n===1) return 1;
+      return n*factorial(n-1);
+      factorail(5)       120
+复杂度O(N)，如果改成尾调用
+       function factorial(n)
+      {
+      if(n===1) return total;
+        return factorial(n - 1, n * total);
+}
+
+factorial(5, 1) // 120
+                      catch参数的代码省略
+    javascript的try...catch结构。
+    正确例子：
+    try { // ... catch { //...}
+      
+      
+      
+      
+      

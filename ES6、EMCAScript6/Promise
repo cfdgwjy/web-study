@@ -1,1 +1,35 @@
 
+Promise是一种异步编程解决方案。promise是一个容器，保存着某个未来才会结束的事件（通常是一个异步操作）的结果。
+Promise两个特点：
+1.promise的状态不受外界影响。promise状态有三种： peddding(进行中)fullfilled(已成功),reject（已失败）
+2.一旦状态改变了，就不能再变，任何时候都能得到这个结果。
+基本用法
+const promise=new Promise((resolve,reject)
+{
+if(/*异步操作成功*/)
+{ resolve(value)}
+else
+{ reject(error)}
+}
+)
+Promise构造函数接受一个函数作为参数。该函数的两个参数分别是resolve和reject.
+resolve函数的作用是将promise对象的状态从未完成变成成功即从 pending 变为 resolved）
+reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected）。
+promise实例生成之后，可以用then方法分别指定resolved状态和rejected状态的回调。
+promise.then(function(value)
+{/*回调成功*/}},function(error){/*回调失败*/}
+)
+例子：
+let promise = new Promise(function(resolve, reject) {
+  console.log('Promise');
+  resolve();
+  }
+  promise.then(function(value){
+  console.log(1);}
+  )
+  
+console.log('Hi!');
+输出结果/ Promise// Hi!// resolved
+原因：Promise新建后立即执行，所以首先输出promise,然后then方法指定的回调函数，将在当前脚本所有同步任务执行完之后才会执行。所以resolved最后输出。
+
+Promise对象实现ajax例子：

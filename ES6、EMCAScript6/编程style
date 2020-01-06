@@ -1,0 +1,63 @@
+                                                      编程style
+1.块级作用域
+let替代var
+全局常量和线程安全，多用const
+2.字符串
+静态字符串一般使用单引号，不使用双引号，动态字符串使用反引号。
+例子：
+// bad
+const a = "foobar";
+const b = 'foo' + a + 'bar';
+// acceptable
+const c = `foobar`;
+// good
+const a = 'foobar';
+const b = `foo${a}bar`;
+3.解构赋值
+使用数组成员对变量进行赋值时，优先使用解构赋值。
+const arr = [1, 2, 3, 4];
+// bad
+const first = arr[0];
+const second = arr[1];
+
+// good
+const [first,second]=arr;
+函数的参数是对象的成员，优先使用解构赋值。
+4.对象
+对象尽量静态化，一旦定义，就不能随意添加新的属性，如果添加属性不可避免，尽量使用object.assign()方法
+// bad
+const a = {};
+a.x = 3;
+
+// if reshape unavoidable
+const a = {};
+Object.assign(a,{x:3})
+// good
+const a = { x: null };
+a.x = 3;
+
+5.数组
+使用...扩展运算符拷贝数组
+const itemsCopy = [...items];
+6.函数
+立即执行函数可以写成箭头函数的形式。
+(()=>
+{ console.log('Welcome to the Internet.');
+}
+)();
+匿名函数当参数的场合，尽量使用箭头函数替代。因为更简洁，而且绑定了this。
+[1, 2, 3].map(function (x) {
+  return x * x;
+});
+
+// good
+[1, 2, 3].map((x) => {
+  return x * x;
+});
+
+// best
+[1, 2, 3].map(x => x * x);
+
+7.map结构
+区分object和map,只有模拟现实世界的实体对象，才用object.如果只是使用key:value的数据结构，使用map结构。因为map才有内置的遍历结构
+

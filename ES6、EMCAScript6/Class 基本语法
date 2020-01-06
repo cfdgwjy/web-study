@@ -7,3 +7,70 @@ Point.prototype.toString = function () {
 
 var p = new Point(1, 2);
 ES6提供了接近传统语言的写法，引入了Class类的概念。作为对象的模板，通过class关键字，定义类。例子用class类改写。
+Class Point()
+{
+  constructor(x,y)
+  { this.x = x;
+    this.y = y;}
+    toString() {
+    return '(' + this.x + ', ' + this.y + ')';
+  }
+}
+            可以看到里面有一个constructor方法，这就是构造方法，而this关键字则代表实例对象。
+Point类除了构造方法，还定义了一个toString方法。注意，定义“类”的方法的时候，前面不需要加上function这个关键字.
+使用的时候，直接对类使用new命令，跟构造函数的用法完全一致。
+var b = new Point();
+构造函数的所有方法，都是定义在类的prototype属性上面。
+在类的实例上面调用方法，其实就是调用原型上的方法。
+class B {}
+let b = new B();
+
+b.constructor === B.prototype.constructor /
+
+                                    constructor方法
+constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法，一个类必须有constructor方法。
+constructor方法默认返回实例对象（即this）
+
+                              取值函数（getter）和村指函数setter
+class MyClass {
+  constructor() {
+    // ...
+  }
+  get prop()
+  {
+  return 'getter'
+}
+set prop(value) {
+    console.log('setter: '+value);
+  }
+  }
+  let inst = new MyClass();
+
+inst.prop = 123;
+// setter: 123
+
+inst.prop
+// 'getter'
+Class表达式
+与函数一样，类也可以用表达式的方式定义。
+const MyClass = class Me {
+  getClassName() {
+    return Me.name;
+  }
+};
+才用Class表达式，写出立即执行的Class.
+let person = new class {
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log(this.name);
+  }
+}('张三');
+
+person.sayName(); 
+
+                            注意点
+  严格模式：类和模块内部，默认就是严格模式。
+  不存在提升 this指向

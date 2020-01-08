@@ -58,3 +58,9 @@ console.log('Contents: ' + json);
 }, function(error) {
   console.error('出错了', error);
 });
+
+过程：
+promise
+.then(result=>{..})
+.catch(error=>{...})
+.finally(() => {···});

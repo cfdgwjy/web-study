@@ -33,3 +33,28 @@ console.log('Hi!');
 原因：Promise新建后立即执行，所以首先输出promise,然后then方法指定的回调函数，将在当前脚本所有同步任务执行完之后才会执行。所以resolved最后输出。
 
 Promise对象实现ajax例子：
+const getJSON = function(url) {
+const promise=new Promise(fucntion(resolve,reject)
+{
+const handler=function()
+{
+ if (this.readyState !== 4) {
+        return;}
+      if (this.status === 200) {
+        resolve(this.response); }
+        else{
+        reject(new Error(this.ErrorText))}
+        const client = new XMLHttpRequest();
+    client.open("GET", url);
+    client.onreadystatechange = handler;
+     client.responseType = "json";
+    client.setRequestHeader("Accept", "application/json");
+    client.send();
+  });
+return promise;
+}})
+getJSON("/posts.json").then(function(json));
+console.log('Contents: ' + json);
+}, function(error) {
+  console.error('出错了', error);
+});

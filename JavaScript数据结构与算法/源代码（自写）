@@ -52,7 +52,7 @@ console.log(array)
 
 
 //划分过程
-funtion hf(array,left,right)
+function hf(array,left,right)
 {
   var pivot=array[math.floor((left+right)/2)];
   i=left;

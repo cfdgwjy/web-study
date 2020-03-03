@@ -22,3 +22,38 @@ var swap = function(index1, index2){
 }; 
 var array=[1,4,3,2];
 sort(array);
+
+//选择排序
+//选出第一小的值放在第一位，第二小的值放在第二位。就是双层循环，比较查出索引indexMin,然后与当前正在遍历的值进行交换，依次进行。
+function sort(array) {
+    var length = array.length;
+    for (i = 0; i < length; i++) {
+        var indexMin = i;
+        for (j = i; j < length; j++) {
+            if (array[indexMin] > array[j]) {
+                indexMin = j;
+            }
+        }
+        if (indexMin != i) {
+            swap(indexMin, i)
+        }
+    }
+
+}
+var swap = function(index1, index2) {
+    var aux = array[index1];
+    array[index1] = array[index2];
+    array[index2] = aux;
+};
+var array = [1, 4, 3, 2];
+sort(array);
+console.log(array)
+
+
+
+
+
+
+
+
+

@@ -51,9 +51,31 @@ console.log(array)
 
 
 
-
-
-
+//划分过程
+funtion hf(array,left,right)
+{
+  var pivot=array[math.floor((left+right)/2)];
+  i=left;
+  j=righ;
+  while(i<=j)
+  {
+    while(array[i]<pivot)
+    {
+      i++;
+    }
+    while(array[j]>pivot)
+    {
+      j--;
+    }
+    if(i<=j)
+    {
+      swapQuickStort(array, i, j); //
+      i++;
+      j--
+    }
+  }
+  return i;
+}
 
 
 

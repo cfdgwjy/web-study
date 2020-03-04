@@ -120,3 +120,25 @@ var merge = function(left, right){
   return result; 
 }
 
+//算法补充知识
+
+1.递归  解决小问题直到解决大问题
+function dg(param)
+{
+dg(param)
+}
+//间接调用自身也算。
+
+斐波那契数列
+
+function fbnq(n){
+  if(n==1||n==2)
+  {
+    return 1;
+  }
+  else{
+ var c=   fbnq(n-1)+fbnq(n-2);
+    return c;
+  }
+}
+console.log(fbnq(5));

@@ -1,0 +1,40 @@
+
+
+                                                      集合
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      
+                                                      字典，散列表
+集合，字典，散列表存储不重复的值。
+集合中，重要的是值本身，字典，散列表是[键，值]对。键名用来查询特定元素。
+举个例子，一个实际的字典，地址簿。
+// 创建字典
+function Dictionary()
+{
+var item={}
+}
+在Object的实例中存储元素。
+var dictionary=new Dictionary();
+dictionary.set('a','b').has('a');
+dictionary.has('a');
+
+
+//散列表
+HashTable类,是Dictionary散列表的一种实现方式。
+//创建散列表
+function HashTable()
+{
+ var table=[];
+}
+var hash=new HashTable();
+hash.put('a','b')
+hash.remove('a')
+hash.get('a')

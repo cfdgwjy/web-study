@@ -1,0 +1,50 @@
+链表是一种动态的数据结构，意味着我们可以从中添加或移除项，它会按需进行扩容。
+数组结构很方便，但是有缺点，数组大小固定，添加移除项成本较高。
+
+链表存储有序的数组集合，每个元素由一个存储元素本身的节点和指向下一个元素的引用组成。
+相对于数组，链表好处在于添加或移除时不需要移动任何元素。
+//创建一个链表
+
+function LinkedList()
+{
+var node=function(element)
+{
+this.element=element;
+this.next=null;
+}
+var length=0;
+var head=null;
+}
+
+LinkedList数据结构还需要一个Node辅助类，Node类表示要加入列表的项。它包含一个element属性。即要添加到列表的值。以及一个next属性，
+即指向列表中下一个项的节点。
+
+var list=new LinkedList();
+list.append(15);
+list.append(18)
+
+//在任意位置插入一个元素
+
+
+
+
+双向链表
+双向链表和普通链表的区别在于在链表中，一个节点只有一个链向下一个节点的链接，但在双向列表中，链接是双向的。一个链向下一元素，另一链向前一元素。
+//创建双向链表
+function DoubleLinkedList()
+{
+var node=function(element)
+{
+var element=this.element;
+this.prev=null;
+this.next=null
+}
+var length=0
+var head=null;
+var tail=null
+}
+]
+
+//在任意位置插入一个元素
+
+

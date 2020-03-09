@@ -1,0 +1,8 @@
+//创建和初始化元素
+
+var a=new Array();
+var a=new Array(1,2,3)
+
+//添加和删除元素
+var number=[0,1,2,3,4];
+numbers.push(12,13);

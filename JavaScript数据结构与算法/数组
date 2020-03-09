@@ -6,3 +6,17 @@ var a=new Array(1,2,3)
 //添加和删除元素
 var number=[0,1,2,3,4];
 numbers.push(12,13);
+push方法能将元素添加到数组末尾
+unshift方法能直接把数值插入到数组首位
+numbers.unshift(-2); 
+pop方法可以删除数组里最靠后的元素
+numbers.pop;
+*** 通过push与pop方法可以用数组来模拟栈。
+shift方法可以删除数组中第一个元素
+numbers.shift()
+***通过shift与unshif可以模拟用数组模拟队列
+
+Jav\aScript数组方法参考
+concat 连接函数
+every 数组的每一项运行给定函数
+join 数组的每一项进行连接成字符串

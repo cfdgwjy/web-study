@@ -24,10 +24,31 @@ list.append(15);
 list.append(18)
 
 //在任意位置插入一个元素
+this.insert = function(position, element) {
+    if (position >= 0 && position <= length) {
+        var node = new Node(element);
+        current = head;
+        previous;
+        index=0;
+        if (position===0) {
+            node.next=current;
+            head=node;
+        } else {
+            while (index++<postion) {
+                pervious = current;
+                current = current.next;
+            }
+            node.next = current;
+            previous.next = node;
+        }
+        length++；
+        return true;
+    }
+  else{
+    return false
+  }
 
-
-
-
+}
 双向链表
 双向链表和普通链表的区别在于在链表中，一个节点只有一个链向下一个节点的链接，但在双向列表中，链接是双向的。一个链向下一元素，另一链向前一元素。
 //创建双向链表

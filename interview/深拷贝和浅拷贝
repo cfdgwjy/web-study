@@ -1,0 +1,18 @@
+深拷贝和浅拷贝
+
+//浅拷贝
+
+function clone(target){
+//创建一个新对象
+let cloneTarget={};
+for(const i in target){
+cloneTarget[i]=target[i];
+}
+return cloneTargert
+}
+
+let obj1={a:1,b:2,c:{d:3}}
+let obj2=clone(obj1)
+console.log(obj2);
+
+浅拷贝实际上是复制对象属性的引用指针

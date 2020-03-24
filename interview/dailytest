@@ -1,0 +1,18 @@
+                    数组去重
+//方法一
+var arr=[1,2,3,3,4,5,4,5,6];
+var seta=Array.from(new Set(arr));
+console.log(seta);
+
+//方法二
+var result=[];
+const map=new Map();
+for(let v of arr)
+{
+  if(!map.has(v))
+  {
+    map.set(v,true);
+    result.push(v);
+  }
+}
+console.log(result);
